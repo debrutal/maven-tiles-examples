@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<distributionManagement>
+		<repository>
+			<id>example-nexus-releases</id>
+			<name>example Releases</name>
+			<url>https://nexus.example.com/repository/example-maven/</url>
+		</repository>
+		<snapshotRepository>
+			<id>example-nexus-snapshots</id>
+			<name>example Snapshots</name>
+			<url>https://nexus.example.com/repository/example-snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+</project>

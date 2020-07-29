@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-scm-plugin</artifactId>
+					<version>3.0.0-M3</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-enforcer-plugin</artifactId>
+					<version>1.2</version>
+					<!-- Invocation is defined by the release plugin goal set hence no executions -->
+					<configuration>
+						<rules>
+							<requireMavenVersion>
+								<version>[3.2.2,)</version>
+							</requireMavenVersion>
+							<requireReleaseDeps>
+								<!--  Don't allow releases with snapshot deps or parents -->
+								<message>No Snapshots Allowed!</message>
+								<failWhenParentIsSnapshot>true</failWhenParentIsSnapshot>
+								<searchTransitive>true</searchTransitive>
+							</requireReleaseDeps>
+							<bannedDependencies>
+								<excludes>
+									<exclude>commons-logging</exclude>
+									<exclude>commons-logging-api</exclude>
+								</excludes>
+							</bannedDependencies>
+						</rules>
+						<fail>true</fail>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.5</version>
+					<configuration>
+						<mavenExecutorId>forked-path</mavenExecutorId>
+						<arguments>-Drepaint.release=release</arguments>
+						<preparationGoals>clean enforcer:enforce verify</preparationGoals>
+						<goals>enforcer:enforce deploy</goals>
+						<tagBase>release/${project.groupId}/</tagBase>
+						<pushChanges>false</pushChanges>
+						<localCheckout>true</localCheckout>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>

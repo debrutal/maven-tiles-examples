@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<properties>
+		<example.scm.git.url>scm:git:git@github.com:example/${project.name}.git</example.scm.git.url>
+		<example.scm.project.url>https://github.com/example/${project.name}</example.scm.project.url>
+		<example.scm.tag.name>${project.name}</example.scm.tag.name>
+	</properties>
+	<scm>
+		<connection>${example.scm.git.url}</connection>
+		<developerConnection>${example.scm.git.url}</developerConnection>
+		<url>${example.scm.project.url}</url>
+		<tag>${example.scm.tag.name}</tag>
+	</scm>
+</project>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<licenses>
+		<license>
+			<name>example closed License</name>
+			<url>www.example.com</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+</project>
