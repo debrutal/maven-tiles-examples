@@ -16,7 +16,6 @@
 		<module>jar-with-sources-tile</module>
 		<module>oci-container-jib-tile</module>
 		<module>scm-tile</module>
-		<module>repositories-tile</module>
 	</modules>
 
 
